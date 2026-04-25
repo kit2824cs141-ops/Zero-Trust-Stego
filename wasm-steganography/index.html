@@ -339,52 +339,7 @@
     </style>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Zero-Trust Stego</h1>
-            <p class="subtitle">Securely conceal cryptographic intel within image data.</p>
-        </header>
-
-        <section class="glass-card" aria-label="Input Configuration">
-            <div class="input-group" style="margin-bottom: 1.5rem;">
-                <label for="image-upload">1. Target PNG Image</label>
-                <input type="file" id="image-upload" accept="image/png" aria-label="Upload Target PNG Image" />
-            </div>
-            
-            <div class="input-group" style="margin-bottom: 2rem;">
-                <label for="secret-message">2. Classified Payload</label>
-                <textarea id="secret-message" placeholder="Type the confidential payload you wish to embed..." rows="4" aria-label="Secret text payload input"></textarea>
-            </div>
-
-            <div class="action-buttons">
-                <button id="encode-btn" aria-label="Inject payload and Download Image">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    Inject & Download
-                </button>
-                <button id="decode-btn" aria-label="Extract payload from Image">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>
-                    Extract Payload
-                </button>
-            </div>
-        </section>
-
-        <hr class="divider"/>
-
-        <section class="output-section">
-            <article class="glass-card output-box" aria-label="Extracted Payload Area">
-                <h3 class="decoded-title">Extracted Intel</h3>
-                <pre id="decoded-message" aria-live="polite"></pre>
-            </article>
-            
-            <article class="glass-card output-box" aria-label="Visual Output Area">
-                <h3 class="output-title">Steganographic Artifact Preview</h3>
-                <div class="image-preview-container">
-                    <img id="output-image" alt="Embedded artifact will appear here" aria-live="polite" />
-                    <div class="preview-placeholder">Awaiting steganographic operations...</div>
-                </div>
-            </article>
-        </section>
-    </main>
+    <div id="yew-root"></div>
 
     <!-- Core WASM Logic -->
     <script type="module" src="main.js"></script>
